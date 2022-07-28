@@ -11,7 +11,6 @@ class ProductEloquentRepository
     public function __construct()
     {
         $this->model = new Product();
-        
     }
 
     public function all(): array
@@ -30,10 +29,12 @@ class ProductEloquentRepository
     {
         return $this->model->find($id);
     }
+
     public function findByName(string $name): ?object
     {
         return $this->model->where('name',$name)->first();
     }
+
     public function deleteById(int $id): bool
     {
         return $this->model->find($id)->delete();

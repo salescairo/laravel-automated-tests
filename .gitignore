@@ -1,0 +1,5 @@
+vendor
+*.key
+*.cache
+*.md
+.env
