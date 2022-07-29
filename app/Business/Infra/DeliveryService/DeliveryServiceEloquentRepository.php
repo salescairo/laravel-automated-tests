@@ -2,7 +2,7 @@
 
 namespace App\Business\Infra\DeliveryService;
 
-use App\Business\Infra\ServiceType\Correios\CorreiosInterface;
+use App\Business\Service\ServiceType\Correios\CorreiosInterface;
 use App\Models\Cart;
 use App\Models\DeliveryService;
 use App\Models\Product;

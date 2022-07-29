@@ -1,5 +1,5 @@
 <?php
-namespace App\Business\Infra\ServiceType\Correios;
+namespace App\Business\Service\ServiceType\Correios;
 
 interface CorreiosInterface
 {

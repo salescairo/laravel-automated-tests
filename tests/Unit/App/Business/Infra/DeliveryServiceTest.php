@@ -4,7 +4,7 @@ namespace Tests\Unit\App\Business\Infra;
 
 use App\Business\Infra\Cart\CartEloquentRepository;
 use App\Business\Infra\DeliveryService\DeliveryServiceEloquentRepository;
-use App\Business\Infra\ServiceType\Correios\CorreiosInterface;
+use App\Business\Service\ServiceType\Correios\CorreiosInterface;
 use App\Business\Infra\ServiceType\Correios\CorreiosRepository;
 use App\Models\Cart;
 use App\Models\DeliveryService;
