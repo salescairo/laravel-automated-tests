@@ -8,49 +8,77 @@ use PHPUnit\Framework\TestCase;
 
 class WordTest extends TestCase
 {
-    private function model():object
-    {
-        return new Word();
-    }
-
     public function test_singular_letter_verification()
     {
-        $this->assertEquals($this->model()->isSingularLetter('z'),true);
+        $word = new Word();
+        
+        $isSingularLetter = $word->isSingularLetter('z');
+
+        $this->assertTrue($isSingularLetter);
     }
     public function test_plural_letter_verification()
     {
-        $this->assertEquals($this->model()->isSingularLetter('M'),false);
+        $word = new Word();
+        
+        $isSingularLetter = $word->isSingularLetter('M');
+
+        $this->assertFalse($isSingularLetter);
     }
 
     public function test_lower_word_size_verification()
     {
-        $this->assertEquals($this->model()->getWordSize('2aba'),4);
+        $word = new Word();
+        
+        $size = $word->getWordSize('2aba');
+
+        $this->assertEquals(4,$size);
     }
     public function test_upper_word_size_verification()
     {
-        $this->assertEquals($this->model()->getWordSize('ADABE'),13);
+        $word = new Word();
+
+        $size = $word->getWordSize('ADABE');
+
+        $this->assertEquals(13,$size);
     }
     
 
     public function test_word_size_coversion_is_happy_number()
     {
+        $word = new Word();
         $happyNumber = new HappyNumber();
-        $this->assertEquals($happyNumber->isHappyNumber($this->model()->getWordSize('DAb')),true);
+
+        $wordSize = $word->getWordSize('DAb');
+        $isHappyNumber = $happyNumber->isHappyNumber($wordSize);
+
+        $this->assertTrue($isHappyNumber);
     }
 
     public function test_word_size_coversion_is_not_happy_number()
     {
-        $this->assertEquals($this->model()->getWordPrimeNumbers('aacb bbba eb'),[true,true,true]);
+        $word = new Word();
+
+        $isHappyNumber = $word->getWordPrimeNumbers('aacb bbba eb');
+
+        $this->assertEquals([true,true,true],$isHappyNumber);
     }
     
     public function test_word_size_coversion_is_prime_number()
     {
-        $this->assertEquals($this->model()->getWordPrimeNumbers('aacb bbba eb'),[true,true,true]);
+        $word = new Word();
+
+        $isPrimeNumbers = $word->getWordPrimeNumbers('aacb bbba eb');
+
+        $this->assertEquals([true,true,true],$isPrimeNumbers);
     }
 
     public function test_word_size_coversion_is_three_or_five_multiple()
     {
-        $this->assertEquals($this->model()->getWordThirdOrFiveMultiples('jjj eee je ja'),[true,true,true,false]);
+        $word = new Word();
+
+        $threeOrFiveMultiple = $word->getWordThirdOrFiveMultiples('jjj eee je ja');
+
+        $this->assertEquals([true,true,true,false],$threeOrFiveMultiple);
     }
     
 
