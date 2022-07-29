@@ -2,22 +2,21 @@
 
 namespace Tests\Unit\App\Models;
 
-use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 use Tests\TestCase;
 
-class ProductTest extends TestCase
+class CartTest extends TestCase
 {
     private function model():Model
     {
-        return new Product();
+        return new Cart();
     }
 
     public function test_fillable()
     {
         $expected = [
-            'name',
-            'value',
+            'user_id',
         ];
         $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
     }

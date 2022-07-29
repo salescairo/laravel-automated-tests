@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Unit\Business\Infra;
+namespace Tests\Unit\App\Business\Infra;
 
 use App\Business\Infra\Product\ProductEloquentRepository;
 use App\Models\Product;

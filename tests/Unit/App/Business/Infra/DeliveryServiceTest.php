@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit\App\Business\Infra;
 
 use App\Business\Infra\Cart\CartEloquentRepository;
 use App\Business\Infra\DeliveryService\DeliveryServiceEloquentRepository;

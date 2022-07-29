@@ -27,4 +27,6 @@ class UserTest extends TestCase
         ];
         $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
     }
+
+
 }
