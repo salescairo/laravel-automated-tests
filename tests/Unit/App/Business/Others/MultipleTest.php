@@ -26,6 +26,7 @@ class MultipleTest extends TestCase
         $multiple = new Multiple(1000);
         $this->assertEquals(count($multiple->getThreeAndFiveMultiples()),66);
     }
+
     public function test_sum_third_and_five_values_multiples()
     {
         $multiple = new Multiple(16);
@@ -44,7 +45,6 @@ class MultipleTest extends TestCase
         $multiple = new Multiple(10);
         $this->assertEquals($multiple->getTotal($multiple->getThreeOrFiveMultiples()),23);
     }
-
 
 
     public function test_count_third_or_five_and_seven_value_multiples()
