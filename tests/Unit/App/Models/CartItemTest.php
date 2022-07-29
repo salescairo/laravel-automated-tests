@@ -8,21 +8,19 @@ use Tests\TestCase;
 
 class CartItemTest extends TestCase
 {
-    private function model():Model
-    {
-        return new CartItem();
-    }
 
     public function test_fillable()
     {
-        $expected = [
+        $cartItem = new CartItem();
+        $fillable = [
             'cart_id',
             'product_id',
             'quantity',
         ];
-        $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
+
+        
+        $diff = array_diff($fillable, $cartItem->getFillable());
+
+        $this->assertEmpty($diff);
     }
-
-
-
 }

@@ -8,17 +8,17 @@ use Tests\TestCase;
 
 class DeliveryServiceTest extends TestCase
 {
-    private function model():Model
-    {
-        return new DeliveryService();
-    }
 
     public function test_fillable()
     {
-        $expected = [
+        $deliveryService = new DeliveryService();
+        $fillable = [
             'cart_id',
         ];
-        $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
+
+        $diff = array_diff($fillable, $deliveryService->getFillable());
+
+        $this->assertEmpty($diff);
     }
 
 

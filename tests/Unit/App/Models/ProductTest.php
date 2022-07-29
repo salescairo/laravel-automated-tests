@@ -8,18 +8,17 @@ use Tests\TestCase;
 
 class ProductTest extends TestCase
 {
-    private function model():Model
-    {
-        return new Product();
-    }
-
     public function test_fillable()
     {
-        $expected = [
+        $product = new Product();
+        $fillable = [
             'name',
             'value',
         ];
-        $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
+
+        $diff = array_diff($fillable, $product->getFillable());
+
+        $this->assertEmpty($diff);
     }
 
 

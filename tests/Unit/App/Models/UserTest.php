@@ -8,24 +8,19 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    private function model(): Model
-    {
-        return new User();
-    }
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
+
     public function test_fillable()
     {
-        $expected = [
+        $user = new User();
+        $fillable = [
             'address',
             'name',
             'email',
             'password',
         ];
-        $this->assertEquals([],array_diff($expected,$this->model()->getFillable()));
+        $diff = array_diff($fillable, $user->getFillable());
+
+        $this->assertEmpty($diff);
     }
 
 
