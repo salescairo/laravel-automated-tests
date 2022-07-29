@@ -22,6 +22,7 @@ class CartItemEloquentRepository
     {
         $this->model->fill($data);
         $this->model->save();
+
         return $this->model;
     }
 
@@ -29,6 +30,7 @@ class CartItemEloquentRepository
     {
         return $this->model->find($id);
     }
+    
     public function deleteById(int $id): bool
     {
         return $this->model->find($id)->delete();

@@ -22,6 +22,7 @@ class ProductEloquentRepository
     {
         $this->model->fill($data);
         $this->model->save();
+        
         return $this->model;
     }
 

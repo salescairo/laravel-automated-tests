@@ -23,6 +23,7 @@ class UserEloquentRepository
     {
         $this->model->fill($data);
         $this->model->save();
+
         return $this->model;
     }
 
@@ -30,10 +31,12 @@ class UserEloquentRepository
     {
         return $this->model->find($id);
     }
+
     public function findByName(string $name): ?object
     {
         return $this->model->where('name',$name)->first();
     }
+    
     public function deleteById(int $id): bool
     {
         return $this->model->find($id)->delete();
