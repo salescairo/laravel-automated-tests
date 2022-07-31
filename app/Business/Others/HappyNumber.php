@@ -22,7 +22,7 @@ class HappyNumber extends Number
     public function getSumNumbers(int $number): int
     {
         $total = 0;
-        foreach ($this->toArray($number) as $item => $value) {
+        foreach ($this->integerToArray($number) as $item => $value) {
             $total += ($value * $value);
         }
         $this->addHistory($number);

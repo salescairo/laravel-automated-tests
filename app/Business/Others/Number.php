@@ -26,7 +26,7 @@ class Number
         return false;
     }
 
-    public function toArray($value): array
+    public function integerToArray($value): array
     {
         return array_map('intval', str_split($value));
     }
