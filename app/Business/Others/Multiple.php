@@ -2,6 +2,7 @@
 
 namespace App\Business\Others;
 
+
 class Multiple extends Number
 {
     public int $limiter;
